@@ -1,0 +1,29 @@
+plugins {
+    id 'groovy'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.groovy:groovy:4.0.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testImplementation platform("org.spockframework:spock-bom:2.3-groovy-4.0")
+    testImplementation "org.spockframework:spock-core"
+//    testImplementation('com.applitools:eyes-images-java3:+')
+//            {
+//                exclude group: 'eyes-connectivity-java3-jersey2x', module: 'eyes-connectivity-java3-jersey2x'
+//            }
+//    testImplementation('com.applitools:eyes-connectivity-java3-jersey1x:+')
+    testImplementation('com.applitools:eyes-images-java5:+')
+    testImplementation('com.applitools:eyes-connectivity-java5:+')
+}
+
+test {
+    useJUnitPlatform()
+}
